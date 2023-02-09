@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>q1</title>
+    </head>
+    <body>
+        <form onsubmit="reverse_each_word()">
+        <input id="input" type="text">
+        <input type="submit" value="submit">
+    </form>
+    </body>
+    <script>
+        
+        function reverse_each_word() {
+            var str = document.getElementById("input").value;
+            var len = str.length;
+
+            var first=0,last=0;
+            var newstr = "";
+            for(var i=0; i < len;i++) {
+                if(str[i]==" " ){
+                    last=i-1;
+                    while(last >= first) {
+                        newstr += str[last];
+                        last--;
+                    }
+                    newstr += " ";
+                    first= i+1;
+                }
+
+                if(i == len-1 ){
+                    last=i;
+
+                    while(last >= first) {
+                        newstr += str[last];
+                        last--;
+                    }
+
+                }
+            }
+            alert(newstr);
+        }
+
+
+
+
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>q1</title>
+    </head>
+    <body>
+        <form onsubmit="check_anagram()">
+        <input id="input1" type="text">
+        <input id="input2" type="text">
+        <input type="submit" value="submit">
+    </form>
+    </body>
+    <script>
+        function check_anagram() {
+            var str1 = document.getElementById('input1').value;
+            var str2 = document.getElementById('input2').value;
+            
+            var flag = true;
+            if(str1.length != str2.length) {
+                console.log("not anagram");
+                flag =false;
+            }
+
+            str1.sort();
+            str2.sort()
+        
+            
+            for (let i = 0; i < str1.length; i++)
+                if (str1[i] != str2[i]) {
+                    console.log("not anagram");
+                    flag = false;
+                }
+                    
+            if(true)
+            console.log("anagram");
+        }
+
+    </script>
+</html>
